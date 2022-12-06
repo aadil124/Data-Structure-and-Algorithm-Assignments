@@ -97,18 +97,70 @@
 // }
 
 /********************************************************************************
- 4) linear search using flag   (menu driven & making arr in another function)
+ 4) linear search using flag,,,,when array declare globally and in own function   (menu driven & making arr in another function)
+********************************************************************************/
+
+// #include <iostream>
+
+// using namespace std;
+
+// int arr[] = {3, 5, 7, 2, 9, 1, -3, 16, 11, 6}; // array declare globally
+
+// void linearSearch()
+// {
+//     cout << "Linear Search of Array Element" << endl;
+//     int arr[] = {3, 5, 7, 2, 9, 1, -3, 16, 11, 6}; // array declare inside own the function
+//     int n = sizeof(arr) / sizeof(int);
+//     int value, i;
+//     cout << "Enter Value here : ";
+//     cin >> value;
+
+//     bool f = 0;
+
+//     for (i = 0; i < n; i++)
+//     {
+//         if (value == arr[i])
+//         {
+//             f = 1;
+//             break;
+//         }
+//     }
+
+//     if (f == 1)
+//     {
+//         cout << "Value is Present at " << i << " index." << endl;
+//     }
+//     else
+//     {
+//         cout << "Value is NOT Present." << endl;
+//     }
+// }
+
+// int main()
+// {
+//     char choice;
+//     do
+//     {
+//         linearSearch();
+//         cout << "Do you want to search another number? please enter 'Y' or 'N' :  ";
+//         cin >> choice;
+//     } while (choice == 'Y');
+
+//     return 0;
+// }
+
+/********************************************************************************
+ 5) linear search using flag ,,,,when array declare in main function (menu driven & making arr in another function)
 ********************************************************************************/
 
 #include <iostream>
 
 using namespace std;
 
-void linearSearch()
+void linearSearch(int arr[], int n)
 {
     cout << "Linear Search of Array Element" << endl;
-    int arr[] = {3, 5, 7, 2, 9, 1, -3, 16, 11, 6};
-    int n = sizeof(arr) / sizeof(int);
+
     int value, i;
     cout << "Enter Value here : ";
     cin >> value;
@@ -126,7 +178,7 @@ void linearSearch()
 
     if (f == 1)
     {
-        cout << "Value is Present at " << i << "index." << endl;
+        cout << "Value is Present at " << i << " index." << endl;
     }
     else
     {
@@ -136,10 +188,12 @@ void linearSearch()
 
 int main()
 {
+    int arr[] = {3, 5, 7, 2, 9, 1, -3, 16, 11, 6}; // array declare inside main function
+    int n = sizeof(arr) / sizeof(int);
     char choice;
     do
     {
-        linearSearch();
+        linearSearch(arr, n);
         cout << "Do you want to search another number? please enter 'Y' or 'N' :  ";
         cin >> choice;
     } while (choice == 'Y');
