@@ -33,6 +33,9 @@ int main()
 {
 
     insertAtBeg(5);
-    cout << head->data;
+    insertAtBeg(23);
+    cout << head->data<<endl;
+    cout << head->next->data;
+
     return 0;
 }
