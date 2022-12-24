@@ -8,9 +8,9 @@ public:
     node *next;
 };
 
-node *head = NULL;
+node *top = NULL;
 
-void Insertionatbeginning()
+void push()
 {
     int val;
     cout << "Enter value to be inserted at beginning: ";
@@ -19,38 +19,38 @@ void Insertionatbeginning()
     p->data = val;
     p->next = NULL;
 
-    if (head == NULL)
+    if (top == NULL)
     {
-        head = p;
+        top = p;
     }
     else
     {
-        p->next = head;
-        head = p;
+        p->next = top;
+        top = p;
     }
 }
 void traversing()
 {
-    node *temp = head;
+    node *temp = top;
     while (temp != NULL)
     {
         cout << temp->data << " ";
         temp = temp->next;
     }
 }
-void Deletionatbeginning()
+void pop()
 {
-    node *temp = head;
-    head = head->next;
+    node *temp = top;
+    top = top->next;
     delete (temp);
 }
 int main()
 {
     int choice;
     cout << "*************Menu for Stack********************\n"
-            "1. Insertion at beginning\n"
+            "1. Insertion at beginning(push)\n"
             "2. Traversing of LL\n"
-            "3. Deletion at beginning\n"
+            "3. Deletion at beginning(pop)\n"
             "4. Exit\n"
          << endl;
 
@@ -61,13 +61,13 @@ int main()
         switch (choice)
         {
         case 1:
-            Insertionatbeginning();
+            push();
             break;
         case 2:
             traversing();
             break;
         case 3:
-            Deletionatbeginning();
+            pop();
             break;
         case 4:
             exit(0);
