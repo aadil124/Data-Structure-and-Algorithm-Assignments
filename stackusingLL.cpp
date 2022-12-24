@@ -5,7 +5,7 @@ class node
 {
 public:
     int data;
-    node *next;
+    node *add;
 };
 
 node *top = NULL;
@@ -15,18 +15,26 @@ void push()
     int val;
     cout << "Enter value to be inserted at beginning: ";
     cin >> val;
-    node *p = new node;
-    p->data = val;
-    p->next = NULL;
+    node *p = new (nothrow) node; //nothrow key word is used when we dont have any memory space
 
-    if (top == NULL)
+    if (!p)
     {
-        top = p;
+        cout << "Stack overflow";
     }
     else
     {
-        p->next = top;
-        top = p;
+        p->data = val;
+        p->add = NULL;
+
+        if (top == NULL)
+        {
+            top = p;
+        }
+        else
+        {
+            p->add = top;
+            top = p;
+        }
     }
 }
 void traversing()
@@ -34,15 +42,22 @@ void traversing()
     node *temp = top;
     while (temp != NULL)
     {
-        cout << temp->data << " ";
-        temp = temp->next;
+        cout << temp->data << "\t";
+        temp = temp->add;
     }
 }
 void pop()
 {
-    node *temp = top;
-    top = top->next;
-    delete (temp);
+    if (top == NULL)
+    {
+        cout << "Underflow";
+    }
+    else
+    {
+        node *temp = top;
+        top = top->add;
+        delete (temp);
+    }
 }
 int main()
 {
