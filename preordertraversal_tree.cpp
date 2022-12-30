@@ -1,5 +1,5 @@
 /***********************************************************************************************
-Implementation of pre order tree
+Implementation of pre order tree (coding part)
 ************************************************************************************************/
 
 #include <iostream>
@@ -15,10 +15,16 @@ public:
 
 void preorder(node *root)
 {
-
-    cout << root->data << "\t";
-    preorder(root->left);
-    preorder(root->right);
+    if (root==NULL)
+    {
+        return;
+    }
+    else
+    {
+        cout << root->data << "\t";
+        preorder(root->left);
+        preorder(root->right);
+    }
 }
 
 int main()
