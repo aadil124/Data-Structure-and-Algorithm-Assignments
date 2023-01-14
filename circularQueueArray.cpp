@@ -1,14 +1,63 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void enqueue(int n){
+#define size 10
+int arr[size];
+int f = -1, r = -1;
 
+void enqueue(int val)
+{
+
+    if ((r + 1) % size == f) //( r==size-1) in LQ
+    {
+        cout << "Over Flow";
+    }
+    else if (f == -1 && r == -1)
+    {
+        f++;
+        r++;
+        arr[r] = val;
+    }
+    else
+    {
+        //    r++;   (in linear queue)
+        r=(r + 1) % size; // in circular queue for rotating purpose
+        arr[r] = val;
+    }
 }
 void dequeue()
 {
+    if (f==-1 && r==-1)
+    {
+       cout<<"underflow";
+    }
+    else if (f==r)
+    {
+        cout<<"deleted element is: "<<arr[f]<<endl;
+        f=r=-1;
+    }
+    else
+    {
+        cout << "deleted element is: " << arr[f] << endl;
+        f = (f+1)%size;      // in LQ (f++)
+    }
+    
 }
 void traverse()
 {
+    for (int i = f; i != r; i=(i + 1) % size)
+    {
+       cout<<arr[i]<<" ";
+    }
+    cout<<arr[r];
+
+    // int i = f;
+    // do
+    // {
+    //       i = f;
+    //     cout << arr[i] << " ";
+    //     i=(i + 1) % size;
+    // } while (i != r);
 }
 
 int main()
@@ -22,15 +71,15 @@ int main()
             "4. Exist\n";
     while (1)
     {
-        cout << "Enter your choice here: ";
+        cout << "\nEnter your choice here: ";
         cin >> choice;
         switch (choice)
         {
         case 1:
-            int n;
+            int val;
             cout << "Enter value to be inserted at beginning: ";
-            cin >> n;
-            enqueue(n);
+            cin >> val;
+            enqueue(val);
             break;
         case 2:
             dequeue();
