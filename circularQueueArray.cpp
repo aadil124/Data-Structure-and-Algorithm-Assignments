@@ -49,15 +49,7 @@ void traverse()
     {
        cout<<arr[i]<<" ";
     }
-    cout<<arr[r];
-
-    // int i = f;
-    // do
-    // {
-    //       i = f;
-    //     cout << arr[i] << " ";
-    //     i=(i + 1) % size;
-    // } while (i != r);
+    cout<<arr[r];   // one value is remaining for print
 }
 
 int main()
