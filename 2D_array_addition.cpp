@@ -20,7 +20,7 @@
 //         for (int j = 0; j < 3; j++)
 //         {
 //             c[i][j] = a[i][j] + b[i][j];
-//             cout << c[i][j] << "\t";
+//             cout << c[i][j] <<"\t";
 //         }
 //         cout << endl;
 //     }
