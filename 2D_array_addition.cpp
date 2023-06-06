@@ -40,7 +40,7 @@ using namespace std;
 int main()
 {
 
-    cout << "2D Arrays Multiplications" << endl;
+    cout << "2D Arrays Multiplication" << endl;
     int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     int b[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     // int a[3][3] = {{2, 4, 1}, {2, 3, 9}, {3, 1, 8}};
